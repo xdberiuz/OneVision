@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+ul,
+ol,
+li,
+a,
+p,
+img {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    border-width: 3px 3px 0px 3px;
+}
+
+.container_150px,
+.container_150-hide {
+    max-width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-bottom: 3px solid #63b6ff;
+}
+
+.container_150px {
+    border-right: 3px solid #63b6ff;
+}
+
+.container_150-hide {
+    border-left: 3px solid #63b6ff;
+}
+
+.container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    border-bottom: 3px solid #63b6ff;
+}
+
+main {
+    display: flex;
+    height: 300px;
+    border: 1px solid grey;
+    border-width: 0px 3px 3px 3px;
+}
+
+.container_left,
+.container_right {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_60per,
+.container_40per,
+.container_50per {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_60per {
+    flex: 60%;
+    border-right: 3px solid #63b6ff;
+}
+
+.container_40per {
+    flex: 40%
+}
+
+.container_50per {
+    flex: 100%;
+}
+
+.container_right .container_50per {
+    border-left: 3px solid #63b6ff;
+}
+
+.container_left .container_50per {
+    border-top: 3px solid #63b6ff;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container_150-hide {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        display: block;
+    }
+    .container_150px,
+    .container_150-hide {
+        max-width: inherit;
+        border-width: 0 0 3px 0;
+    }
+    main {
+        display: block;
+    }
+    .container_60per,
+    .container_40per,
+    .container_50per {
+        height: 75px;
+        flex: 100%;
+    }
+    .container_60per {
+        border: 3px solid #63b6ff;
+        border-width: 0 0px 3px 0px;
+    }
+    .container_50per {
+        border-bottom: 3px solid #63b6ff;
+    }
+    .container_right .container_50per {
+        border-width: 0 0 3px 0;
+    }
+}
